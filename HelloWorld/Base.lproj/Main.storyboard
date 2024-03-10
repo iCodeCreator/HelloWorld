@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_72" orientation="landscape" appearance="light"/>
+    <device id="retina6_12" orientation="portrait" appearance="dark"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
@@ -14,43 +14,57 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="HelloWorld" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="932" height="430"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WzV-dW-JIy">
-                                <rect key="frame" x="75" y="220.33333333333337" width="782" height="204.66666666666663"/>
-                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bGd-8V-dVj">
-                                <rect key="frame" x="75" y="16" width="782" height="188.33333333333334"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello, World!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="yKU-KP-bff">
+                                <rect key="frame" x="16" y="209" width="361" height="53"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="45"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5A4-vg-HZm">
+                                <rect key="frame" x="88" y="574.66666666666663" width="217" height="39"/>
                                 <color key="backgroundColor" systemColor="systemOrangeColor"/>
-                            </view>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="217" id="Aeq-ja-xhg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Show Greeting">
+                                    <color key="titleColor" systemColor="labelColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="showGreetingButtonDidTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="2pT-Wa-Hbb"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="WzV-dW-JIy" firstAttribute="top" secondItem="bGd-8V-dVj" secondAttribute="bottom" constant="16" id="5Wx-NF-c4p"/>
-                            <constraint firstItem="bGd-8V-dVj" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="HnN-eF-shP"/>
-                            <constraint firstItem="bGd-8V-dVj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="ItL-XW-Xof"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bGd-8V-dVj" secondAttribute="trailing" constant="16" id="MnN-0P-fL8"/>
-                            <constraint firstItem="WzV-dW-JIy" firstAttribute="height" secondItem="bGd-8V-dVj" secondAttribute="height" multiplier="1.08854" id="PQE-wG-dd4"/>
-                            <constraint firstItem="WzV-dW-JIy" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="16" id="Ust-un-ywq"/>
-                            <constraint firstItem="WzV-dW-JIy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="b3f-O6-igs"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="WzV-dW-JIy" secondAttribute="trailing" constant="16" id="gY6-MZ-DNV"/>
+                            <constraint firstItem="5A4-vg-HZm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HIs-fN-d4d"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yKU-KP-bff" secondAttribute="trailing" constant="16" id="a8L-Ba-2cs"/>
+                            <constraint firstItem="yKU-KP-bff" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="hDr-Ih-Tnt"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="5A4-vg-HZm" secondAttribute="bottom" multiplier="4:3" id="pOH-QD-Eg6"/>
+                            <constraint firstItem="yKU-KP-bff" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="150" id="zqc-Ix-Rlt"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="greetingLabel" destination="yKU-KP-bff" id="kFz-GP-2T9"/>
+                        <outlet property="showGreetingButton" destination="5A4-vg-HZm" id="yZ5-1U-MLw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="133.59999999999999" y="3.1484257871064472"/>
+            <point key="canvasLocation" x="133.58778625954199" y="2.8169014084507045"/>
         </scene>
     </scenes>
     <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemIndigoColor">
-            <color red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
